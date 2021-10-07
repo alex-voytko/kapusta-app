@@ -6,6 +6,7 @@ import Summary from '../../components/Summary';
 const AuthorizationView = () => {
     return (
         <>
+            <AuthForm />
             <AppBar />
             <div></div>
             <Summary />
