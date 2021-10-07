@@ -46,7 +46,6 @@
 }
 
 .googleFormWrapper {
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -59,7 +58,6 @@
 }
 
 .formWrapper {
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -81,8 +79,8 @@
 
 .label {
     display: block;
-    font-family: Roboto;
     font-style: normal;
+    font-weight: 300;
     font-size: 12px;
     line-height: 0.85;
     letter-spacing: 0.04em;
@@ -121,7 +119,7 @@
 .inputTextMessage {
     color: #f00505;
     margin: 1px 0 0;
-    font-family: Verdana;
+    // font-family: Verdana;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

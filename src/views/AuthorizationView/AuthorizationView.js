@@ -1,11 +1,13 @@
 import React from 'react';
 import AuthForm from '../../components/AuthForm';
+import styles from './AuthorizationView.module.scss';
 
 const AuthorizationView = () => {
     return (
         <>
-            <AuthForm />
-            <div></div>
+            <div>
+                <AuthForm />
+            </div>
         </>
     );
 };
