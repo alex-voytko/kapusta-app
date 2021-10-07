@@ -10,9 +10,8 @@ const App = () => {
         <>
             <AppBar />
             <Container>
-                <h1>Hello</h1>
+                <AuthorizationView />
             </Container>
-            <AuthorizationView />
         </>
     );
 };
