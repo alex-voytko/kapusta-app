@@ -1,0 +1,38 @@
+.calendarContainer{
+    display: flex;
+    align-items: center;   
+         cursor: pointer;
+         background: #FFFFFF;   
+         padding: 0;
+         margin-right: 40px;         
+  }
+  
+  .datepicker{
+    height: 40px;
+    width: 105px;
+      position: relative;
+      border: 0;
+      padding: 0;
+      margin-bottom: 5px;
+      width: 75px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.04em;
+      outline: none;
+      color: #52555f;
+    
+      &:hover {
+        cursor: pointer;
+      } 
+  }
+  
+  .calendarIcon{  
+  width: 30px;
+  height: 20px;
+  margin-left: 5px;
+  background-image: url("../../images/calendar.svg");
+  margin-right: 12px;
+  }
