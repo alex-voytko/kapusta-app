@@ -5,6 +5,8 @@
     height: 40px;
     margin-bottom: 59px;
     margin-top: 33px;
+    align-items: center;
+    justify-content: center;
 }
 
 .inputTransaction{
@@ -42,13 +44,14 @@
         border-radius: 0px 16px 16px 0px;
         outline: none;
         padding-left: 21px;
+        text-align: center;
+        align-items: center;
       }
     
-      &::after {
-        
+      &::after {        
         position: absolute;
         content: "";
-        right: 14px;
+        right: 94px;
         top: 10px;
         width: 20px;
         height: 20px;
