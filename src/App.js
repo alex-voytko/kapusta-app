@@ -8,6 +8,7 @@ import ReportsView from './views/ReportsView';
 const App = () => {
     return (
         <>
+        <HomeView/>
             <AppBar />
             <Container>
                 <h1>Hello</h1>

@@ -1,0 +1,31 @@
+.calendarContainer{
+    width: 230px;
+    height: 40px; 
+       cursor: pointer;
+}
+
+.datepicker{
+    position: relative;
+    border: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    width: 75px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    outline: none;
+    color: #52555f;
+  
+    &:hover {
+      cursor: pointer;
+    } 
+}
+
+.calendarIcon{
+width: 20px;
+height: 20px;
+}
+
