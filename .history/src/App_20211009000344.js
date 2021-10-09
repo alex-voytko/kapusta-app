@@ -24,7 +24,7 @@ function App ()  {
 
             <Suspense fallback={<p>...Loading</p>}>
                 <Switch>
-                    <Route exact path="/Home">
+                    <Route exact path="/Home" exact component = {HomeView}>
                         <HomeView />
                     </Route>
 
