@@ -10,7 +10,7 @@ const App = () => {
         <>
             <AppBar />
             <Container>
-                <AuthorizationView />
+                <HomeView />
             </Container>
         </>
     );
