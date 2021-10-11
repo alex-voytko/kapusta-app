@@ -1,11 +1,16 @@
 import React from 'react';
 import TransactionForm from '../../components/TransactionForm'
+import Balance from '../../components/Balance/Balance';
+import Summary from '../../components/Summary/Summary';
 
-const HomeView = () => {
+function HomeView() {
     return (
-    <>
- <TransactionForm/>
-    </>);
-};
+        <>
+            <Balance />
+            <TransactionForm/>
+            <Summary />
+        </>
+    );
+}
 
 export default HomeView;
