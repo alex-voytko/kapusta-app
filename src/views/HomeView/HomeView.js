@@ -1,7 +1,5 @@
 import React from 'react';
-// import Button from '../../components/Buttons/Button';
-// import BalanceString from '../../components/BallancString/BallanceString';
-// import ToReportsButton from '../../components/Buttons/ToReportsButton';
+import TransactionForm from '../../components/TransactionForm'
 import Balance from '../../components/Balance/Balance';
 import Summary from '../../components/Summary/Summary';
 
@@ -9,7 +7,7 @@ function HomeView() {
     return (
         <>
             <Balance />
-
+            <TransactionForm/>
             <Summary />
         </>
     );
