@@ -1,3 +1,4 @@
+@import './vars.scss';
 /* Указываем box sizing */
 *,
 *::before,
@@ -35,6 +36,20 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    font-family: Roboto;
+    @media screen and (min-width: $mobile) {
+        background-image: url('../images/background-mobile.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: $tablet) {
+        background-image: url('../images/background-tablet.png');
+    }
+    @media screen and (min-width: $desktop) {
+        background-image: url('../images/background-desktop.png');
+    }
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/

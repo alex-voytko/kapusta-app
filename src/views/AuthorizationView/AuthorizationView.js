@@ -1,14 +1,13 @@
 import React from 'react';
-import AppBar from '../../components/AppBar';
 import AuthForm from '../../components/AuthForm';
-import Summary from '../../components/Summary';
+import styles from './AuthorizationView.module.scss';
 
 const AuthorizationView = () => {
     return (
         <>
-            <AppBar />
-            <div></div>
-            <Summary />
+            <div>
+                <AuthForm />
+            </div>
         </>
     );
 };

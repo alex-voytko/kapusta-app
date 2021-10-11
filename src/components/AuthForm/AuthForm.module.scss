@@ -1,0 +1,173 @@
+@import '../../sass/vars.scss';
+
+.formContainer {
+    width: 300px;
+    height: 525px;
+    position: relative;
+    padding-top: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ffffff;
+    box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
+    border-radius: 30px;
+    margin-top: 200px;
+    @media screen and (min-width: 768px) {
+        width: 436px;
+        height: 535px;
+        margin-top: 240px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-top: 117px;
+        margin-left: 734px;
+    }
+}
+
+.googleButton {
+    color: #000000;
+    font-weight: 700;
+    width: 122px;
+    height: 44px;
+    align-items: center;
+    margin-left: 80px;
+    margin-top: 26px;
+    margin-bottom: 27px;
+    padding: 10px;
+    border-radius: 24px; /* !important; */
+
+    @media screen and (min-width: 768px) {
+        margin-left: 157px;
+    }
+}
+
+.googleFormContainer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.googleFormWrapper {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    color: #52555f;
+}
+
+.formWrapper {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #52555f;
+}
+
+.formInput {
+    padding-top: 22px;
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+.label {
+    display: block;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 0.85;
+    letter-spacing: 0.04em;
+    color: #000000;
+}
+
+.input {
+    display: block;
+    width: 270px;
+    height: 48px;
+    border-radius: 24px;
+    border: 2px solid #f4f6fb;
+    background-color: #f5f7fa;
+    padding: 0 0 0 27px;
+    margin: 12px auto 0px auto;
+    align-content: center;
+}
+
+.inputError {
+    height: 48px;
+    display: block;
+    border: none;
+    width: 265px;
+    outline: 0;
+    height: 30px;
+    background-color: #f6f7fb;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.inputErrorMessage {
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.inputTextMessage {
+    color: #f00505;
+    margin: 1px 0 0;
+    // font-family: Verdana;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.formButtonsWrapper {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formButton {
+    width: 125px;
+    height: 45px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 17px;
+    text-align: center;
+    color: #020307;
+    background-color: #ffff;
+    font-weight: 700;
+    &:hover {
+        background-color: #ff751d;
+        color: #ffffff;
+        transition: 0.2s ease-in-out;
+    }
+    &:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .input {
+        width: 265px;
+    }
+
+    .inputError {
+        width: 265px;
+        height: 52px;
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+
+    .inputErrorMessage {
+        height: 20px;
+        margin-bottom: 20px;
+    }
+}
