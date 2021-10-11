@@ -20,8 +20,6 @@ const ReportsView = lazy(() =>
 function App ()  {
     return (
         <div>
-          
-
             <Suspense fallback={<p>...Loading</p>}>
                 <Switch>
                     <Route exact path="/Home">
@@ -41,6 +39,6 @@ function App ()  {
                 </Switch>
             </Suspense>
         </div>
-    );
+    )
 }
 export default App;
