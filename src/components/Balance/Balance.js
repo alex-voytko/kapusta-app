@@ -1,5 +1,5 @@
 import ToReportsButton from '../Buttons/ToReportsButton';
-import BalanceString from '../BallancString/BallanceString';
+import BalanceString from '../BallanceString';
 import Button from '../Buttons/Button';
 import styles from './Balance.module.scss';
 

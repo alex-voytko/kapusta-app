@@ -16,7 +16,7 @@ const refreshUserRequest = createAction('auth/refreshUserRequest');
 const refreshUserSuccess = createAction('auth/refreshUserSuccess');
 const refreshUserError = createAction('auth/refreshUserError');
 
-export {
+export default {
     registerRequest,
     registerSuccess,
     registerError,

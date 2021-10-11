@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AuthorizationView = lazy(() => import('./views/AuthorizationView'));
-
 const HomeView = lazy(() => import('./views/HomeView'));
 const ReportsView = lazy(() => import('./views/ReportsView'));
 function App() {
