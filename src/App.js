@@ -1,7 +1,7 @@
-import React from 'react';
 import AppBar from './components/AppBar';
 import { Suspense, lazy } from "react";
 import { Switch, Route } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 
 const AuthorizationView= lazy(() =>
   import("./views/AuthorizationView")
@@ -13,7 +13,7 @@ const HomeView = lazy(() =>
 const ReportsView = lazy(() =>
   import("./views/ReportsView")
 );
-function App ()  {
+function App () {
     return (
         <div>
             <Suspense fallback={<p>...Loading</p>}>

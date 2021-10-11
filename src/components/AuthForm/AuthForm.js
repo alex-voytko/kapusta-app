@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Formik, useField } from 'formik';
 import * as Yup from 'yup';
 import s from './AuthForm.module.scss';
 import GoogleLogin from 'react-google-login';
+import { useDispatch } from 'react-redux';
+import { login, register } from '../../redux/auth/auth-operations';
+import { loginSuccess } from '../../redux/auth/auth-actions';
+import axios from 'axios';
 
 const initialForm = { email: '', password: '' };
 
@@ -46,8 +50,26 @@ export const FormControl = ({ label, ...props }) => {
 };
 
 function AuthForm() {
+    const [action, setAction] = useState('');
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = values => {
+        if (action === 'register') {
+            dispatch(register(values));
+        } else if (action === 'login') {
+            dispatch(login(values));
+        }
+    };
+
     const responseSuccessGoogle = response => {
-        console.log(response);
+        axios({
+            method: 'POST',
+            url: 'https://kapusta-backend.goit.global/auth/google',
+            data: { tokenId: response.tokenId },
+        }).then(response => {
+            dispatch(loginSuccess(response.data.user));
+        });
     };
 
     const responseErrorGoogle = response => {
@@ -59,6 +81,7 @@ function AuthForm() {
             <Formik
                 initialValues={initialForm}
                 validationSchema={validationSchema}
+                onSubmit={handleSubmit}
             >
                 <Form className={s.form} autoComplete="off">
                     <div className={s.googleFormContainer}>
@@ -69,7 +92,7 @@ function AuthForm() {
                     </div>
 
                     <GoogleLogin
-                        /* clientId="" */
+                        clientId="845366867093-6tuo84nuh2o6h8t8dqpkdl3asmg4mvt8.apps.googleusercontent.com"
                         buttonText="Google"
                         onSuccess={responseSuccessGoogle}
                         onFailure={responseErrorGoogle}
@@ -97,11 +120,19 @@ function AuthForm() {
                             placeholder="password"
                         />
                         <div className={s.formButtonsWrapper}>
-                            <button type="submit" className={s.formButton}>
+                            <button
+                                type="submit"
+                                className={s.formButton}
+                                onClick={() => setAction('login')}
+                            >
                                 Войти
                             </button>
 
-                            <button type="submit" className={s.formButton}>
+                            <button
+                                type="submit"
+                                className={s.formButton}
+                                onClick={() => setAction('register')}
+                            >
                                 Регистрация
                             </button>
                         </div>
