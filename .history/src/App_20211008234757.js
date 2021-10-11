@@ -20,9 +20,11 @@ const ReportsView = lazy(() =>
 function App ()  {
     return (
         <div>
+            <Header />
+
             <Suspense fallback={<p>...Loading</p>}>
                 <Switch>
-                    <Route exact path="/Home">
+                    <Route path="/Home">
                         <HomeView />
                     </Route>
 
@@ -33,12 +35,10 @@ function App ()  {
                     <Route path="/Reports">
                         <ReportsView />
                     </Route>
-                {/* <Redirect to ="/Home">
-             <HomeView />
-             </Redirect> */}
+                   
                 </Switch>
             </Suspense>
         </div>
-    )
+    );
 }
 export default App;

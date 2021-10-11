@@ -4,41 +4,41 @@ import Container from './components/Container';
 // import AuthorizationView from './views/AuthorizationView';
 // import HomeView from './views/HomeView';
 // import ReportsView from './views/ReportsView';
-import { Suspense, lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import { Switch, Route } from "react-router-dom";
 
-const AuthorizationView= lazy(() =>
+const AuthorizationPage= lazy(() =>
   import("./views/AuthorizationView")
 );
 
-const HomeView = lazy(() =>
+const HomePage = lazy(() =>
   import("./views/HomeView")
 );
-const ReportsView = lazy(() =>
+const ReportsPage = lazy(() =>
   import("./views/ReportsView")
 );
-function App ()  {
+const App = () => {
     return (
         <div>
+            <Header />
+
             <Suspense fallback={<p>...Loading</p>}>
                 <Switch>
-                    <Route exact path="/Home">
-                        <HomeView />
+                    <Route path="/Home">
+                        <HomePage />
                     </Route>
 
                     <Route path="/Authorization">
-                        <AuthorizationView />
+                        <AuthorizationPage />
                     </Route>
 
                     <Route path="/Reports">
-                        <ReportsView />
+                        <ReportsPage />
                     </Route>
-                {/* <Redirect to ="/Home">
-             <HomeView />
-             </Redirect> */}
+                   
                 </Switch>
             </Suspense>
         </div>
-    )
+    );
 }
 export default App;
