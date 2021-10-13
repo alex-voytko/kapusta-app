@@ -1,0 +1,28 @@
+@import '../../sass/vars.scss';
+
+.container{
+background-color: $backgroundColor;
+justify-content: center;
+        align-items: center;
+}
+
+.accounting{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;    
+    align-items: start;
+}
+
+@media screen and (min-width: $tablet) {
+    .container {
+        padding: 28px 30px 28px 30px;        
+    }
+    
+}
+@media screen and (min-width: $desktop) {
+    .container {
+        padding: 33px 20px 33px 20px;
+    }
+  }
+
