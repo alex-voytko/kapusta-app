@@ -19,7 +19,7 @@ function App() {
                     <Route path="/Authorization">
                         <AuthorizationView />
                     </Route>
-                    <Route path="/Reports">
+                    <Route path="/reports">
                         <ReportsView />
                     </Route>
                 </Switch>
