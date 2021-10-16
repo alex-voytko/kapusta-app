@@ -12,6 +12,10 @@ const ReportsStatistics = () => {
                         <span className={styles.container_item_txt}>
                             {result.price}
                         </span>
+                        <img
+                            src="https://chefrestoran.ru/wp-content/uploads/2018/10/604655519.jpg"
+                            alt="img"
+                        />
 
                         <span className={styles.container_item_txt}>
                             {result.name}
