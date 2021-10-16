@@ -18,14 +18,14 @@ const initialUserState = {
 
 const user = createReducer(initialUserState, {
     [registerSuccess]: (_, { payload }) => ({
-        email: payload.email,
-        verifyToken: payload.verifyToken,
+        email: payload.data.email,
+        verifyToken: payload.data.verifyToken,
     }),
 
     [loginSuccess]: (_, { payload }) => ({
-        email: payload.email,
-        id: payload.id,
-        token: payload.token,
+        email: payload.data.email,
+        id: payload.data.id,
+        token: payload.data.token,
     }),
     [refreshUserSuccess]: (state, { payload }) => ({
         ...state,

@@ -64,7 +64,7 @@ function AuthForm() {
 
     const responseSuccessGoogle = response => {
         axios({
-            method: 'POST',
+            method: 'GET',
             url: 'https://kapusta-backend.goit.global/auth/google',
             data: { tokenId: response.tokenId },
         }).then(response => {

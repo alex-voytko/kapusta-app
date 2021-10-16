@@ -73,7 +73,7 @@ const logOut = () => async dispatch => {
     try {
         resetParams();
 
-        await axios.get('/auth/logout');
+        await axios.post('/auth/logout');
         token.unset();
 
         dispatch(logoutSuccess());
@@ -82,7 +82,16 @@ const logOut = () => async dispatch => {
     }
 };
 
-const refreshUser = () => async (dispatch, getState) => {
+const refreshUser = refreshObject => async (dispatch, getState) => {
+    dispatch(refreshUserRequest());
+
+    const {
+        auth: { refreshToken: refToken, sid: id },
+    } = getState();
+    /* const credentials = { sid: id }; */
+
+    /* const tokenId = getState().auth.tokenId;
+
     const {
         auth: { token: persistedToken },
     } = getState();
@@ -90,12 +99,13 @@ const refreshUser = () => async (dispatch, getState) => {
     if (!persistedToken) {
         return;
     }
-    token.set(persistedToken);
+    token.set(persistedToken); */
+    token.set(refToken);
 
     dispatch(refreshUserRequest());
 
     try {
-        const { data } = await axios.get('/auth/refresh');
+        const { data } = await axios.post('/auth/refresh', refreshObject);
 
         dispatch(refreshUserSuccess(data));
     } catch (error) {
