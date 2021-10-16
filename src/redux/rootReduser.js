@@ -3,6 +3,7 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 import balanceReducer from './balance/balance-reducer';
 import { authReducer } from './auth';
+import { balanceReducer } from '../components/Balance/Balance'
 
 const persistConfig = {
     key: 'auth',
@@ -15,6 +16,7 @@ const persistAuthReducer = persistReducer(persistConfig, authReducer);
 const rootReducer = combineReducers({
     auth: persistAuthReducer,
     balance: balanceReducer,
+
 });
 
 export default rootReducer;
