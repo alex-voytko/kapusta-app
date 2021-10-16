@@ -12,14 +12,14 @@ function App() {
             <AppBar />
             <Suspense fallback={<p>...Loading</p>}>
                 <Switch>
-                    <Route exact path="/Home">
+                    <Route exact path="/home">
                         <HomeView />
                     </Route>
 
-                    <Route path="/Authorization">
+                    <Route path="/authorization">
                         <AuthorizationView />
                     </Route>
-                    <Route path="/Reports">
+                    <Route path="/reports">
                         <ReportsView />
                     </Route>
                 </Switch>
