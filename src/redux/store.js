@@ -42,6 +42,7 @@ const middleware = [
 
 const store = configureStore({
     reducer: rootReducer,
+
     middleware,
 });
 
