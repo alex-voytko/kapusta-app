@@ -1,18 +1,5 @@
 import axios from 'axios';
-import {
-    registerRequest,
-    registerSuccess,
-    registerError,
-    loginRequest,
-    loginSuccess,
-    loginError,
-    logoutRequest,
-    logoutSuccess,
-    logoutError,
-    refreshUserRequest,
-    refreshUserSuccess,
-    refreshUserError,
-} from './auth-actions';
+import authActions from './auth-actions';
 import {
     noteSuccess,
     noteError,
@@ -29,23 +16,23 @@ const token = {
     },
 };
 const register = registrationObject => async dispatch => {
-    dispatch(registerRequest());
+    dispatch(authActions.registerRequest());
 
     try {
         const {
             data: { data },
         } = await axios.post('/auth/register', registrationObject);
-        dispatch(registerSuccess(data));
+        dispatch(authActions.registerSuccess(data));
         noteSuccess('Реєстація пройшла успішно. Увійдіть в свій акаунт.');
     } catch (error) {
         if (error.response?.status === 409) {
             noteError('Такий e-mail вже зареєстрований');
         }
-        dispatch(registerError(error.message));
+        dispatch(authActions.registerError(error.message));
     }
 };
 const login = loginObject => async (dispatch, getState) => {
-    dispatch(loginRequest());
+    dispatch(authActions.loginRequest());
 
     const authToken = getState().auth.token;
 
@@ -56,19 +43,19 @@ const login = loginObject => async (dispatch, getState) => {
 
         token.set(authToken);
 
-        dispatch(loginSuccess(data));
+        dispatch(authActions.loginSuccess(data));
         noteSuccess('Вітаємо!');
     } catch (error) {
         if (error.response?.status === 403) {
             noteError('Невірна пошта, або пароль');
         }
-        dispatch(loginError(error.message));
+        dispatch(authActions.loginError(error.message));
     }
 };
 const resetParams = () => (axios.defaults.params = {});
 
 const logOut = () => async dispatch => {
-    dispatch(logoutRequest());
+    dispatch(authActions.logoutRequest());
 
     try {
         resetParams();
@@ -76,9 +63,9 @@ const logOut = () => async dispatch => {
         await axios.post('/auth/logout');
         token.unset();
 
-        dispatch(logoutSuccess());
+        dispatch(authActions.logoutSuccess());
     } catch (error) {
-        dispatch(logoutError(error.message));
+        dispatch(authActions.logoutError(error.message));
     }
 };
 
@@ -102,18 +89,18 @@ const refreshUser = refreshObject => async (dispatch, getState) => {
     token.set(persistedToken); */
     token.set(refToken);
 
-    dispatch(refreshUserRequest());
+    dispatch(authActions.refreshUserRequest());
 
     try {
         const { data } = await axios.post('/auth/refresh', refreshObject);
 
-        dispatch(refreshUserSuccess(data));
+        dispatch(authActions.refreshUserSuccess(data));
     } catch (error) {
         if (error.response.status === 401) {
-            dispatch(logoutSuccess());
+            dispatch(authActions.logoutSuccess());
         }
-        dispatch(refreshUserError(error.message));
+        dispatch(authActions.refreshUserError(error.message));
     }
 };
 
-export { token, login, register, logOut, refreshUser };
+export default { token, login, register, logOut, refreshUser };

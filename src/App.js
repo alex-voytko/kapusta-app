@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AuthorizationView = lazy(() => import('./views/AuthorizationView'));
-
 const HomeView = lazy(() => import('./views/HomeView'));
 const ReportsView = lazy(() => import('./views/ReportsView'));
 function App() {
@@ -13,14 +12,14 @@ function App() {
             <AppBar />
             <Suspense fallback={<p>...Loading</p>}>
                 <Switch>
-                    <Route exact path="/Home">
+                    <Route exact path="/home">
                         <HomeView />
                     </Route>
 
-                    <Route path="/Authorization">
+                    <Route path="/authorization">
                         <AuthorizationView />
                     </Route>
-                    <Route path="/Reports">
+                    <Route path="/reports">
                         <ReportsView />
                     </Route>
                 </Switch>

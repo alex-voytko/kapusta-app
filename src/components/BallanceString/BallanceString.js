@@ -1,11 +1,24 @@
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import balanceOperetion from '../../redux/balance/balance-operations';
+import balanceSelector from '../../redux/balance/balance-selectors';
 import styles from './BalanceString.module.scss';
-function BalanceString() {
-    const balance = '00.00';
 
-    const handleChange = e => {};
+export default function BalanceString() {
+    const currentBalance = useSelector(balanceSelector.getBalance);
+    const dispatch = useDispatch();
+    const [balance, setBalance] = useState('');
+
+    const handleChange = evt => {
+        const balance = evt.target.value;
+        setBalance(balance);
+    };
 
     const handleSubmit = evt => {
         evt.preventDefault();
+        console.log(`получен баланс ${balance}`);
+        dispatch(balanceOperetion.addBalance(+balance));
+        setBalance('');
     };
 
     return (
@@ -16,8 +29,9 @@ function BalanceString() {
                     <input
                         className={styles.input}
                         type="text"
-                        value={`${balance} UAH`}
-                        name="balans"
+                        placeholder={`${currentBalance} ГРН`}
+                        value={balance}
+                        name="balance"
                         onChange={handleChange}
                         pattern="\d+(\.\d{2})"
                         title="Баланс должен состоять из цифр, разделителя 'точка' и не более двух цифр после точки"
@@ -28,4 +42,3 @@ function BalanceString() {
         </form>
     );
 }
-export default BalanceString;

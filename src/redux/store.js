@@ -44,9 +44,9 @@ const store = configureStore({
                     PERSIST,
                     PURGE,
                     REGISTER,
-                ],
-            },
-        }),
+                ]
+            }
+        })
 });
 
 const persistor = persistStore(store);

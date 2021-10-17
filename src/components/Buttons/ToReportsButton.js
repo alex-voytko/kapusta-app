@@ -5,7 +5,7 @@ import { ReactComponent as Icon } from '../../images/reports.svg';
 const ToReportsButton = () => {
     return (
         <div className={styles.ToReportsButton}>
-            <Link to="/ReportsPage" className={styles.link}>
+            <Link to="/reports" className={styles.link}>
                 <p>Перейти к отчетам</p>
                 <Icon />
             </Link>

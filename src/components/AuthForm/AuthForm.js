@@ -4,8 +4,8 @@ import * as Yup from 'yup';
 import s from './AuthForm.module.scss';
 import GoogleLogin from 'react-google-login';
 import { useDispatch } from 'react-redux';
-import { login, register } from '../../redux/auth/auth-operations';
-import { loginSuccess } from '../../redux/auth/auth-actions';
+import { authOperations } from '../../redux/auth';
+import { authActions } from '../../redux/auth';
 import axios from 'axios';
 
 const initialForm = { email: '', password: '' };
@@ -56,9 +56,9 @@ function AuthForm() {
 
     const handleSubmit = values => {
         if (action === 'register') {
-            dispatch(register(values));
+            dispatch(authOperations.register(values));
         } else if (action === 'login') {
-            dispatch(login(values));
+            dispatch(authOperations.login(values));
         }
     };
 
@@ -68,7 +68,7 @@ function AuthForm() {
             url: 'https://kapusta-backend.goit.global/auth/google',
             data: { tokenId: response.tokenId },
         }).then(response => {
-            dispatch(loginSuccess(response.data.user));
+            dispatch(authActions.loginSuccess(response.data.user));
         });
     };
 
