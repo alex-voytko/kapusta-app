@@ -10,11 +10,12 @@ import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AuthorizationView = () => {
-    /* const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(refreshUser());
-    }, [dispatch]) */ return (
+    }, [dispatch]);
+    return (
         <>
             <div>
                 <AuthForm />
