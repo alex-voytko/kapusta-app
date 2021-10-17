@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 /* import styles from './AuthorizationView.module.scss'; */
 
-import { refreshUser } from '../../redux/auth/auth-operations';
+import authOperations from '../../redux/auth/auth-operations';
 
 import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,7 +13,7 @@ const AuthorizationView = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(refreshUser());
+        dispatch(authOperations.refreshUser());
     }, [dispatch]);
     return (
         <>

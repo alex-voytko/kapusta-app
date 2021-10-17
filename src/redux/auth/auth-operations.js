@@ -70,7 +70,7 @@ const logOut = () => async dispatch => {
 };
 
 const refreshUser = refreshObject => async (dispatch, getState) => {
-    dispatch(refreshUserRequest());
+    dispatch(authActions.refreshUserRequest());
 
     const {
         auth: { refreshToken: refToken, sid: id },
