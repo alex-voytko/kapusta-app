@@ -1,0 +1,130 @@
+.wrap {
+    position: relative;
+    margin: auto;
+    padding: 0px;
+    height: 198px;
+
+    min-width: 278px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrowBtn {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    top: 18px;
+    left: 20px;
+    border: none;
+    background-color: var(--grey);
+    /* width: 20px;
+  height: 20px; */
+    cursor: pointer;
+}
+
+.arrowSvg {
+    fill: var(--orange);
+    color: var(--orange);
+    width: 30px;
+    height: 20px;
+}
+
+.backText {
+    display: none;
+}
+
+.backTextTabl {
+    display: none;
+}
+
+.calendarWrap {
+    margin-top: 54px;
+    margin-bottom: 32px;
+}
+
+.calendarText {
+    margin-top: 2px;
+    display: none;
+}
+
+.switchWrap {
+    display: flex;
+}
+
+.cldrMonth {
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    padding-top: 2px;
+}
+
+.calendarBtn {
+    display: block;
+    border: none;
+    background: none;
+    width: 20px;
+    color: orange;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        padding: 0;
+        width: 688px;
+        height: 104px;
+    }
+
+    .arrowBtn {
+        position: initial;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 180px;
+        height: 20px;
+    }
+
+    .backText {
+        display: none;
+    }
+
+    .backTextTabl {
+        display: inline-block;
+        font-size: 13px;
+        color: var(--text-dark);
+        margin-left: 16px;
+    }
+
+    .calendarWrap {
+        margin: 0;
+        width: 180px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .wrap {
+        margin: auto;
+        width: 942px;
+        height: 112px;
+        align-items: center;
+    }
+
+    .backText {
+        display: inline;
+        font-size: 13px;
+        color: var(--text-dark);
+        margin-left: 12px;
+    }
+
+    .backTextTabl {
+        display: none;
+    }
+}
