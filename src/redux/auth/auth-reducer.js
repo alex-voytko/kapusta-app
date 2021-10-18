@@ -13,14 +13,8 @@ const user = createReducer(initialUserState, {
         verifyToken: payload.data.verifyToken,
     }),
     [authActions.loginSuccess]: (_, { payload }) => ({
-<<<<<<< Updated upstream
-        email: payload.data.email,
-        id: payload.data.id,
-        token: payload.data.token,
-=======
         email: payload.userData.email,
         id: payload.userData.id,
->>>>>>> Stashed changes
     }),
     [authActions.refreshUserSuccess]: (state, { payload }) => ({
         ...state,
