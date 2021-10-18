@@ -1,12 +1,14 @@
 import SwiperReport from '../../components/Swiper/SwiperReport';
 import ReportsStatistics from '../../components/ReportsStatistics/ReportsStatistics';
 import Chartjs from '../../components/Chartjs/Chartjs';
+import StatisticMenu from '../../components/StatisticMenu/StatisticMenu';
 import styles from './Report.module.css';
 
 function ReportsView() {
     return (
         <>
             <div className={styles.categories}>
+                <StatisticMenu />
                 <div className={styles.dataline}>
                     <div className={styles.dataline_block}>
                         <span className={styles.dataline_label}>Расходы:</span>
