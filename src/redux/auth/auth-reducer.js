@@ -13,25 +13,36 @@ const user = createReducer(initialUserState, {
         verifyToken: payload.data.verifyToken,
     }),
     [authActions.loginSuccess]: (_, { payload }) => ({
+<<<<<<< Updated upstream
         email: payload.data.email,
         id: payload.data.id,
         token: payload.data.token,
+=======
+        email: payload.userData.email,
+        id: payload.userData.id,
+>>>>>>> Stashed changes
     }),
     [authActions.refreshUserSuccess]: (state, { payload }) => ({
         ...state,
         ...payload,
     }),
     [authActions.logoutSuccess]: () => initialUserState,
+    [authActions.getCurUserSuccess]: (state, { payload }) => ({
+        ...state,
+        email: payload.email,
+    }),
+    //полностью обработать action во всех редюсерах
 });
 
 const token = createReducer(null, {
     [authActions.registerSuccess]: () => null,
-    [authActions.loginSuccess]: (_, { payload }) => payload.token,
+    [authActions.loginSuccess]: (_, { payload }) => payload.accessToken,
     [authActions.logoutSuccess]: () => null,
 });
 
 const loading = createReducer(false, {
     [authActions.loginSuccess]: () => false,
+    //добавить реквесты => true
     [authActions.loginError]: () => false,
     [authActions.logoutSuccess]: () => false,
     [authActions.logoutError]: () => false,
@@ -43,6 +54,7 @@ const loading = createReducer(false, {
 
 const error = createReducer(null, {
     [authActions.registerError]: (_, { payload }) => payload,
+    [authActions.registerRequest]: () => null, //все реквесты в null
     [authActions.loginError]: (_, { payload }) => payload,
     [authActions.logoutError]: (_, { payload }) => payload,
     [authActions.refreshUserError]: (_, { payload }) => payload,
@@ -53,13 +65,14 @@ const isRegistrated = createReducer(false, {
 });
 
 const isAuthenticated = createReducer(false, {
-    [authActions.isRegistrated]: () => true,
+    [isRegistrated]: () => true,
     [authActions.loginSuccess]: () => true,
     [authActions.refreshUserSuccess]: () => true,
     [authActions.registerError]: () => false,
     [authActions.loginError]: () => false,
     [authActions.refreshUserError]: () => false,
     [authActions.logoutSuccess]: () => false,
+    [authActions.getCurUserSuccess]: () => true,
 });
 
 export default combineReducers({

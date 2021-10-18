@@ -6,14 +6,14 @@ import { authSelectors } from '../../redux/auth';
 import UserMenu from '../UserMenu';
 
 export default function AppBar() {
-    const isLoggedIn = useSelector(authSelectors.getAuth);
+    const isAuth = useSelector(authSelectors.getIsAuth);
     return (
         <>
             <header className={styles.headerWrapper}>
                 <div className="header-logo">
                     <img src={headerLogo}></img>
                 </div>
-                {isLoggedIn ? <UserMenu /> : null}
+                {isAuth ? <UserMenu /> : null}
             </header>
         </>
     );

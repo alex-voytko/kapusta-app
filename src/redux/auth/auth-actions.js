@@ -16,6 +16,10 @@ const refreshUserRequest = createAction('auth/refreshUserRequest');
 const refreshUserSuccess = createAction('auth/refreshUserSuccess');
 const refreshUserError = createAction('auth/refreshUserError');
 
+const getCurUserRequest = createAction('auth/getCurUserRequest');
+const getCurUserSuccess = createAction('auth/getCurUserSuccess');
+const getCurUserError = createAction('auth/getCurUserError');
+
 export default {
     registerRequest,
     registerSuccess,
@@ -29,4 +33,7 @@ export default {
     refreshUserRequest,
     refreshUserSuccess,
     refreshUserError,
+    getCurUserRequest,
+    getCurUserSuccess,
+    getCurUserError,
 };

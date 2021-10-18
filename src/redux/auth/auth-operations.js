@@ -37,9 +37,8 @@ const login = loginObject => async (dispatch, getState) => {
     const authToken = getState().auth.token;
 
     try {
-        const {
-            data: { data },
-        } = await axios.post('/auth/login', loginObject);
+        const { data } = await axios.post('/auth/login', loginObject);
+        console.log(axios.post('/auth/login', loginObject));
 
         token.set(authToken);
 
@@ -103,4 +102,16 @@ const refreshUser = refreshObject => async (dispatch, getState) => {
     }
 };
 
-export default { token, login, register, logOut, refreshUser };
+const getCurrentUser = () => async (dispatch, getState) => {
+    dispatch(authActions.getCurUserRequest());
+    const accessToken = getState().auth.token;
+    token.set(accessToken);
+    try {
+        const { data } = await axios.get('/user');
+        dispatch(authActions.getCurUserSuccess(data));
+    } catch (error) {
+        dispatch(authActions.getCurUserError(error.message));
+    }
+};
+
+export default { token, login, register, logOut, refreshUser, getCurrentUser };
