@@ -1,14 +1,15 @@
 @import '../../sass/vars.scss';
 
-.container{
-background-color: $backgroundColor;
-justify-content: center;
+.container{    
+background-color:  #FFFFFF;;
         align-items: center;
+        border-radius: 0 30px 30px 30px;
 }
 
 .accounting{
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: center;
     justify-content: space-evenly;
     flex-wrap: wrap;    
     align-items: start;

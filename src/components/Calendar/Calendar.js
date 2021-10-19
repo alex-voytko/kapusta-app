@@ -12,7 +12,7 @@ const Calendar = ({selectedDate, handleChange}) => (
              id="datepicker" 
              selected={selectedDate}
               onChange={handleChange}
-               dateFormat="dd.MM.yyyy"
+               dateformat="dd.MM.yyyy"
                 name="date" 
                 fixedHeight />
         </div>
