@@ -1,5 +1,5 @@
 import Table from 'rc-table';
-
+import { format } from 'date-fns'
 
 
 import s from './TransactionList.module.scss'
@@ -13,21 +13,21 @@ const data = [{
   },]
 
   const Button =()=>(
-    <button type="button" className={s.btn} ></button>
+    <button type="button" className={s.btn} onClick></button>
   )
 
 
-const TransactionList =()=> {
+const TransactionList =(item, onDelete)=> {
 
     const { Column } = Table;
 
 return(
     <Table data={data} className={s.containerTList} scroll={{y: 200}}>     
-        <Column title="ДАТА" dataIndex='date' dateformat="dd.MM.yyyy" key="date" width={100} />
+        <Column title="ДАТА" dataIndex='date' key="date" width={100}  render={(date)=> format(new Date(date), 'dd-MM-yyyy')}/>
         <Column title="ОПИСАНИЕ" dataIndex="description" key="description" width={300} />
       <Column title="КАТЕГОРИЯ" dataIndex="category" key="category" width={200} />
       <Column title="СУММА" dataIndex="amount" key="amount" width={200} />
-      <Column title="" dataIndex="" key="" render={() =><Button onClick onDelete/>} />
+      <Column title="" dataIndex="" key="" render={() =><Button onClick={() =>onDelete(item._id)}/>} />
     </Table>    
 )
 }

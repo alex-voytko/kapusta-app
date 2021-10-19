@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Calendar from '../Calendar';
 import Select from 'react-select';
 
+
 import s from './TransactionForm.module.scss';
 
 
@@ -20,6 +21,7 @@ const options = [
   { value: 'other', label: 'Прочее' },
   ];
 
+  
 
 const TransactionForm = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -38,6 +40,10 @@ const TransactionForm = () => {
     // useSelector
 
     
+
+    const resetInput = ()=>{ }
+
+    
     return (
         <form className={s.transactionForm}>   
             <Calendar className={s.calendar} selectedDate={startDate} onChange={(date) => setStartDate(date)} />
@@ -51,8 +57,8 @@ const TransactionForm = () => {
             <label className={s.calcIcon} htmlform="calculator"/>            
             </div>
             <div className={s.btnBlock}>
-            <button type='submit' text='ВВОД' className={s.btn} onClick={()=>{}} >ВВОД</button>
-            <button type="button" text="ОЧИСТИТЬ" className={s.btn} onClick={() =>{}}>ОЧИСТИТЬ</button>
+            <button type='submit' className={s.btn} onClick={()=>{}} >ВВОД</button>
+            <button type="button"  className={s.btn} onClick={resetInput}>ОЧИСТИТЬ</button>
             </div>
         </form>
     );
