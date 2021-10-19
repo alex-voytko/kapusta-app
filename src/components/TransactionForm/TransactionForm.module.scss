@@ -1,43 +1,49 @@
+@import '../../sass/vars.scss';
+
 .transactionForm{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    margin-bottom: 59px;
-    margin-top: 33px;
-    align-items: center;
-    justify-content: center;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.inputTransaction{
-    position: relative;
-    display: flex;
-    width: 600px;
+.inputTransaction{  
+  margin-top: 15px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
-    &:nth-child(1) {
-        width: 268px;
+.inputDesc{  
+  max-width: 268px;
         height: 44px;
-        border: 2px solid #f5f6fb;
+        border: 2px solid $backgroundColor;
         box-sizing: border-box;
         border-radius: 16px 0px 0px 0px;
         outline: none;
         padding-left: 21px;
-      }
-      & :nth-child(2) {
-        width: 188px;
+}
+
+.inputSelect{  
+   max-width: 168px;
         height: 44px;
-        border: 2px solid #f5f6fb;
-        border-top: 2px solid #f5f6fb;
+        border: 2px solid $backgroundColor;
+        border-top: 2px solid $backgroundColor;
         border-right: none;
-        border-bottom: 2px solid #f5f6fb;
+        border-bottom: 2px solid $backgroundColor;
         border-left: none;
         box-sizing: border-box;
         outline: none;
         padding-left: 21px;
-      }
-    
-      & :nth-child(3) {
-        width: 126px;
+}
+
+.inputAmount{ 
+  max-width: 126px;
         height: 44px;
         border: 2px solid #f5f6fb;
         box-sizing: border-box;
@@ -46,16 +52,40 @@
         padding-left: 21px;
         text-align: center;
         align-items: center;
-      }
-    
-      &::after {        
-        position: absolute;
-        content: "";
-        right: 94px;
-        top: 10px;
-        width: 20px;
-        height: 20px;
-        color: #52555f;
-        background-image: url("../../images/calculator.svg");
-      }
-    }
+        background-image: url('../../images/calculator.svg');
+        background-position: right;
+        background-repeat: no-repeat;
+}
+
+.btnBlock{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 27px;
+}
+
+.btn{
+  width: 125px;
+  height: 44px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);;
+  border: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-radius: 16px;
+  text-align: center;
+  color: $mainTextColor;
+  background-color: #ffff;
+  font-weight: 700;
+ 
+  
+  &:hover {
+      background-color: $accentColor;
+      color: #ffffff;
+      transition: 0.2s ease-in-out;
+  }
+  &:first-child {
+      margin-right: 15px;
+  }
+}
+
