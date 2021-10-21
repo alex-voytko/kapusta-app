@@ -1,8 +1,87 @@
-// @import '../../sass/vars.scss';
+@import '../../sass/vars.scss';
 
-.userMenuContainer {
-    display: flex;
+@media screen and (min-width: $mobile) {
+    .userMenuContainer {
+        display: flex;
+        align-items: center;
+    }
+    .btnLogOutContainer {
+        padding-left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logoutButton {
+        width: 16px;
+        height: 16px;
+        display: block;
+        background-image: url('../../images/exit.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: none;
+        background-color: inherit;
+        .logOutBtnText {
+            display: none;
+        }
+    }
+    .nickname {
+        display: none;
+    }
+    .firstLetterContainer {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $backgroundColor;
+    }
+    .firstLetter {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        color: $mainTextColor;
+    }
 }
-.firstLetterContainer {
-    margin-right: 10px;
+@media screen and (min-width: $tablet) {
+    .btnLogOutContainer {
+        padding-left: 0;
+        height: 36px;
+        padding-left: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-left: 1px solid #e0e5eb;
+        margin-left: 20px;
+    }
+    .logoutButton {
+        width: 39px;
+        background-image: none;
+        background-size: unset;
+        display: block;
+        .logOutBtnText {
+            display: block;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            text-align: left;
+            background-color: inherit;
+            line-height: 1.17;
+            text-decoration: underline;
+            letter-spacing: 0.04em;
+            color: $mainTextColor;
+        }
+    }
+    .nickname {
+        display: block;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 1.17;
+        text-align: center;
+        vertical-align: middle;
+        letter-spacing: 0.04em;
+        color: $mainTextColor;
+        margin-left: 10px;
+    }
 }

@@ -19,16 +19,18 @@ export default function UserMenu() {
         <>
             <div className={s.userMenuContainer}>
                 <div className={s.firstLetterContainer}>
-                    <p>{email[0]}</p>
+                    <p className={s.firstLetter}>{email[0]}</p>
                 </div>
-                <p>{makeNickname(email)}</p>
-                <button
-                    type="button"
-                    onClick={onLogOut}
-                    className="logout-button"
-                >
-                    Выйти
-                </button>
+                <p className={s.nickname}>{makeNickname(email)}</p>
+                <div className={s.btnLogOutContainer}>
+                    <button
+                        type="button"
+                        onClick={onLogOut()}
+                        className={s.logoutButton}
+                    >
+                        <p className={s.logOutBtnText}>Выйти</p>
+                    </button>
+                </div>
             </div>
         </>
     );
