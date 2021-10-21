@@ -1,7 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Calendar from '../Calendar';
-import Select from 'react-select';
+import ButtonForm from '../Buttons/ButtonForm';
+import Select, { StylesConfig } from 'react-select';
+
 
 
 import s from './TransactionForm.module.scss';
@@ -39,8 +41,7 @@ const TransactionForm = () => {
     }, []);
     // useSelector
 
-    
-
+   
     const resetInput = ()=>{ }
 
     
@@ -51,14 +52,15 @@ const TransactionForm = () => {
             <div className={s.inputTransaction}>
             <input className={s.inputDesc} type="text" placeholder="Описание товара" onChange={inputDescription}   required />
                 
-            <Select className={s.inputSelecty} options={options} /*value={category}*/  placeholder='Категория товара'  />
+            <Select styles={s.select} options={options} /*value={category}*/  placeholder='Категория товара'  />
 
             <input className={s.inputAmount} type="text" placeholder="0,00" onChange={inputSum} ng-pattern="/^\d{1,10}$/" required/>   
             <label className={s.calcIcon} htmlform="calculator"/>            
             </div>
             <div className={s.btnBlock}>
-            <button type='submit' className={s.btn} onClick={()=>{}} >ВВОД</button>
-            <button type="button"  className={s.btn} onClick={resetInput}>ОЧИСТИТЬ</button>
+                <ButtonForm className={s.btn} onClick={()=>{}} text="ВВОД" type="submit" accent/>
+                <ButtonForm className={s.btn} onClick={resetInput} text="ОЧИСТИТЬ" type="button" />
+            
             </div>
         </form>
     );
