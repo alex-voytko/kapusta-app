@@ -17,9 +17,10 @@
   flex-wrap: wrap;
   margin-top: 30px;
   margin-bottom: 30px;
+  font-size: 12px;
 
   .inputDesc{  
-  max-width: 268px;
+ width: 268px;
         height: 44px;
         border: 2px solid $backgroundColor;
         box-sizing: border-box;
@@ -44,32 +45,12 @@
         background-repeat: no-repeat;
 }
 }
-
-.select{  
-
-  container{
-    width: 100%;
-     height: 44px;
-     border: 2px solid $backgroundColor;
-        border-top: 2px solid $backgroundColor;
-        border-right: none;
-        border-bottom: 2px solid $backgroundColor;
-        border-left: none;
-        box-sizing: border-box;
-        outline: none;
-        padding-left: 21px;
-  }
-
-
-}
-
-
-
+  
 
 .btnBlock{
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-left: 27px;
 }
@@ -87,21 +68,22 @@
   background-color: #ffff;
   font-weight: 700;
 
-  &.accent {
-    background-color:  $accentColor;
-    color: #ffffff;
-
+  &.accent{
+    background-color: $accentColor;
+  }
+  
+    
     &:hover {
       background-color: $accentColor;
       color: #ffffff;
       transition: 0.2s ease-in-out;
   }
-  }
- 
   
-  
-  &:first-child {
+    &:first-child {
       margin-right: 15px;
   }
+
+
 }
+
 

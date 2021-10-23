@@ -1,5 +1,8 @@
-const ButtonForm = ({type, onClick=null, text, className, accent})=>(
-    <button className={accent ? className + 'accent' : className} type={type} onClick={onClick}>{text}</button>
+
+
+
+const ButtonForm = ({type, onClick=null, text, className})=>(
+    <button className={className} type={type} onClick={onClick}>{text}</button>
 )
 
 export default ButtonForm;

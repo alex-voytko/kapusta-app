@@ -28,7 +28,7 @@ const TransactionList =(item, onDelete)=> {
 
 return(
     <Table data={data} className={s.containerTList} scroll={{y: 200}}>     
-        <Column title="ДАТА" dataIndex='date' key="date" width={100}  render={(date)=> format(new Date(date), 'dd-MM-yyyy')}/>
+        <Column title="ДАТА" dataIndex='date' key="date" width={150}  render={(date)=> format(new Date(date), 'dd-MM-yyyy')}/>
         <Column title="ОПИСАНИЕ" dataIndex="description" key="description" width={300} />
       <Column title="КАТЕГОРИЯ" dataIndex="category" key="category" width={200} />
       <Column title="СУММА" dataIndex="amount" key="amount" width={100} />
