@@ -15,6 +15,7 @@ function HomeView() {
                 <Balance />
                 {/* <ModalZeroBalance /> */}
                 <div className={s.container}>
+
                     <TransactionForm />
                     <div className={s.accounting}>
                       <TransactionList />

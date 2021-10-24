@@ -54,5 +54,5 @@ const expenses = createReducer([], {
 
 export default combineReducers({
     incomes,
-    expenses,
+    expenses,  
 });
